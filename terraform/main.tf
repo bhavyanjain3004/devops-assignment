@@ -94,23 +94,6 @@ resource "aws_s3_bucket_versioning" "app_logs" {
   }
 }
 
-resource "aws_s3_bucket_lifecycle_configuration" "app_logs" {
-  bucket = aws_s3_bucket.app_logs.id
-
-  rule {
-    id     = "expire-noncurrent-versions"
-    status = "Enabled"
-
-    filter {
-      prefix = ""
-    }
-
-    noncurrent_version_expiration {
-      noncurrent_days = 30
-    }
-  }
-}
-
 resource "aws_ebs_volume" "orphan" {
   availability_zone = "us-east-1a"
   size              = var.ebs_volume_size
