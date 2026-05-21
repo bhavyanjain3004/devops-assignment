@@ -1,0 +1,56 @@
+{
+  "scan_timestamp": "2026-05-21T19:55:55Z",
+  "account_id": "000000000000",
+  "region": "us-east-1",
+  "summary": {
+    "total_orphans": 3,
+    "estimated_monthly_waste_usd": 1.6
+  },
+  "findings": [
+    {
+      "resource_id": "vol-6d4cef27",
+      "resource_type": "ebs_volume",
+      "reason": "unattached",
+      "age_days": 0,
+      "estimated_monthly_cost_usd": 1.6,
+      "tags": {
+        "Project": "nimbus-kart",
+        "Environment": "staging",
+        "Owner": "devops-team"
+      },
+      "suggested_action": "delete",
+      "safe_to_auto_delete": true,
+      "protected": false
+    },
+    {
+      "resource_id": "vol-91294bd6",
+      "resource_type": "ebs_volume",
+      "reason": "missing required tags: Project, Environment, Owner",
+      "age_days": 0,
+      "estimated_monthly_cost_usd": 0.0,
+      "tags": {
+        "Project": null,
+        "Environment": null,
+        "Owner": null
+      },
+      "suggested_action": "tag",
+      "safe_to_auto_delete": false,
+      "protected": false
+    },
+    {
+      "resource_id": "vol-578e85b4",
+      "resource_type": "ebs_volume",
+      "reason": "missing required tags: Project, Environment, Owner",
+      "age_days": 0,
+      "estimated_monthly_cost_usd": 0.0,
+      "tags": {
+        "Project": null,
+        "Environment": null,
+        "Owner": null
+      },
+      "suggested_action": "tag",
+      "safe_to_auto_delete": false,
+      "protected": false
+    }
+  ]
+}
