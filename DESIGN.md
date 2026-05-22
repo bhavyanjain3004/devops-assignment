@@ -4,17 +4,19 @@
 
 To support GCP and Azure without rewriting the core. 
 
+```
 janitor/
 ├── core/
-│   ├── scanner.py        ← orchestrator, cloud-agnostic
-│   ├── models.py         ← Finding dataclass, shared schema
-│   └── report.py         ← JSON + Markdown output
+│   ├── scanner.py     <- orchestrator, cloud-agnostic
+│   ├── models.py      <- Finding dataclass, shared schema
+│   └── report.py      <- JSON + Markdown output
 ├── providers/
-│   ├── base.py           ← Abstract base class
-│   ├── aws.py            ← boto3 implementation
-│   ├── gcp.py            ← google-cloud-compute implementation
-│   └── azure.py          ← azure-mgmt-compute implementation
-└── janitor.py            ← CLI entrypoint, loads provider by --cloud flag
+│   ├── base.py        <- Abstract base class
+│   ├── aws.py         <- boto3 implementation
+│   ├── gcp.py         <- google-cloud-compute
+│   └── azure.py       <- azure-mgmt-compute
+└── janitor.py         <- CLI, loads provider via --cloud flag
+```
 
 When GCP comes in next quarter, someone writes `gcp.py` implementing the same interface as `aws.py`. The core scanner, the report format, the CI pipeline — none of that changes. That is the only structure worth building.
 
