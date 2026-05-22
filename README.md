@@ -28,26 +28,31 @@ tflocal output
 
 ## Architecture
 
-LocalStack
+## Architecture
+
+```
 +--------------------------------------------------+
-|  VPC (10.20.0.0/16)                             |
-|                                                  |
-|  +-------------------+  +-------------------+   |
-|  | Subnet A          |  | Subnet B          |   |
-|  | us-east-1a        |  | us-east-1b        |   |
-|  |                   |  |                   |   |
-|  |  [EC2: web-a]     |  |  [EC2: web-b]     |   |
-|  +-------------------+  +-------------------+   |
-|                                                  |
-|  [Security Group]        [EBS Volume - orphan]  |
-|  80/443 open             unattached             |
-|  22 restricted                                  |
+|  LocalStack                                      |
 |                                                  |
 |  +----------------------------------------------+|
-|  | S3 Bucket: nimbus-kart-app-logs              ||
-|  | Versioning: Enabled                          ||
+|  |  VPC (10.20.0.0/16)                          ||
+|  |                                              ||
+|  |  +-----------------+  +-----------------+   ||
+|  |  | Subnet A        |  | Subnet B        |   ||
+|  |  | us-east-1a      |  | us-east-1b      |   ||
+|  |  | [EC2: web-a]    |  | [EC2: web-b]    |   ||
+|  |  +-----------------+  +-----------------+   ||
+|  |                                              ||
+|  |  [Security Group]    [EBS orphan volume]    ||
+|  |  80/443 open         unattached             ||
+|  |  22 restricted                              ||
+|  +----------------------------------------------+|
+|                                                  |
+|  +----------------------------------------------+|
+|  |  S3: nimbus-kart-app-logs (versioning on)    ||
 |  +----------------------------------------------+|
 +--------------------------------------------------+
+```
 
 ## Decisions & deviations
 
