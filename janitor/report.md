@@ -1,5 +1,5 @@
 # Cost Janitor Report
-**Scan time:** 2026-05-21T19:55:55Z
+**Scan time:** 2026-05-24T07:59:27Z
 **Account:** 000000000000
 **Region:** us-east-1
 
@@ -10,6 +10,6 @@
 ## Findings
 | Resource ID | Type | Reason | Age (days) | Est. Cost/month |
 |-------------|------|--------|------------|-----------------|
-| vol-6d4cef27 | ebs_volume | unattached | 0 | $1.60 |
-| vol-91294bd6 | ebs_volume | missing required tags: Project, Environment, Owner | 0 | $0.00 |
-| vol-578e85b4 | ebs_volume | missing required tags: Project, Environment, Owner | 0 | $0.00 |
+| vol-93afc1b3 | ebs_volume | unattached | 0 | $1.60 |
+| vol-00f39500 | ebs_volume | missing required tags: Project, Environment, Owner | 0 | $0.00 |
+| vol-b73a421a | ebs_volume | missing required tags: Project, Environment, Owner | 0 | $0.00 |
